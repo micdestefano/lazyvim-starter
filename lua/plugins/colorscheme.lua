@@ -6,7 +6,7 @@ return {
             transparent = true,
             styles = {
                 sidebars = "transparent",
-                floats = "transparent",
+                floats = "normal",
             },
             -- Default colors and highlights are defined into the colors and highlights
             -- tables into the following file:
