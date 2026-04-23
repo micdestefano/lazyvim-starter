@@ -14,8 +14,9 @@ return {
             -- We have to modify those fields for making changes. The fields correspond
             -- to standard VIM names (see :help highlight-groups)
             on_colors = function(colors)
-                colors.mds_comment = "#B0BECF"
-                colors.mds_line_number = "#98A3B8"
+                -- colors.mds_comment = "#98A3B8"
+                colors.mds_comment = "#dfe5ec"
+                colors.mds_visible_gray = "#B0BECF"
             end,
             on_highlights = function(highlights, colors)
                 -- Look at :help highlight-groups for the right variables
@@ -27,8 +28,10 @@ return {
                     fg = colors.mds_comment,
                 }
                 highlights.Comment = { fg = colors.mds_comment, italic = true }
-                highlights.LineNrAbove = { fg = colors.mds_line_number }
-                highlights.LineNrBelow = { fg = colors.mds_line_number }
+                highlights.LineNrAbove = { fg = colors.mds_visible_gray }
+                highlights.LineNrBelow = { fg = colors.mds_visible_gray }
+                highlights.DiagnosticUnderlineWarn = { fg = colors.mds_visible_gray }
+                highlights.DiagnosticUnnecessary = { fg = colors.mds_visible_gray }
             end,
         },
     },
