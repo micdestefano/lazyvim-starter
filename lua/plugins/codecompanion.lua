@@ -37,13 +37,13 @@ return {
                 chat = {
                     adapter = {
                         name = "ollama",
-                        model = "qwen2.5-coder:7b",
+                        model = "devstral-small-2:24b-cloud",
                     },
                 },
                 inline = {
                     adapter = {
                         name = "ollama",
-                        model = "qwen2.5-coder:7b",
+                        model = "devstral-small-2:24b-cloud",
                     },
                 },
             },
