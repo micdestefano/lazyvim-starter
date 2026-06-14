@@ -46,28 +46,26 @@ return {
                         model = "gemma4:e2b",
                     },
                 },
-                adapters = {
-                    http = {
-                        ollama = function()
-                            return require("codecompanion.adapters").extend("ollama", {
-                                name = "ollama",
-                                -- The following is not needed because codecompanion
-                                -- reads the OLLAMA_HOST env var
-                                -- env = {
-                                --     url = "http://deathstar:11434",
-                                -- },
-                                schema = {
-                                    num_ctx = {
-                                        default = 16384,
-                                    },
-                                    num_predict = {
-                                        default = 4096,
-                                    },
-                                },
-                            })
-                        end,
-                    },
-                },
+            },
+        },
+        adapters = {
+            http = {
+                ollama = function()
+                    return require("codecompanion.adapters").extend("ollama", {
+                        name = "ollama",
+                        -- The following is not needed because codecompanion
+                        -- reads the OLLAMA_HOST env var
+                        -- env = {
+                        --     url = "http://deathstar:11434",
+                        -- },
+                        parameters = {
+                            num_predict = 4096,
+                        },
+                        opts = {
+                            timeout = 60,
+                        },
+                    })
+                end,
             },
         },
     },
